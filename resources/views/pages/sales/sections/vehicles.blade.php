@@ -1,13 +1,5 @@
 <section class="relative bg-white py-24 font-[var(--font-sans)] overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-[var(--color-secondary)] mb-6">
-                Notre sélection de véhicules
-            </h2>
-            <p class="text-lg text-[var(--color-tertiary)] max-w-2xl mx-auto">
-                Tous nos véhicules sont contrôlés, révisés et prêts à rouler
-            </p>
-        </div>
         
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
             <iframe
@@ -29,10 +21,10 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <x-base.button href="tel:+41221234567" variant="primary">
-                    📞 022 123 45 67
+                    Appelez-nous
                 </x-base.button>
-                <x-base.button href="{{ route('contact') }}" variant="outline">
-                    ✉️ Nous contacter
+                <x-base.button href="{{ route('contact') }}" variant="secondary">
+                    Écrivez-nous
                 </x-base.button>
             </div>
         </div>

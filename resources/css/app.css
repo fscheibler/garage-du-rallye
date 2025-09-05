@@ -20,3 +20,53 @@
 .is-active::before {
     background-color: #ff4d24;
 }
+
+/* Contact form styles inspired by ShiftUp */
+.gd-form { }
+.gd-field { }
+.gd-label {
+    display: block;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.gd-input,
+.gd-textarea,
+.gd-select {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 3px solid #e5e7eb; /* thicker underline */
+    padding: 10px 0;
+    font-size: 18px;
+    color: var(--color-secondary);
+    outline: none;
+}
+.gd-input:focus,
+.gd-textarea:focus,
+.gd-select:focus {
+    border-bottom-color: var(--color-secondary);
+}
+.gd-textarea { min-height: 160px; }
+
+.gd-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: #f3f4f6; /* gray-100 */
+    padding: 18px 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--color-secondary);
+}
+.gd-btn-icon {
+    display: inline-block;
+    width: 4px;
+    height: 40px;
+    background: var(--color-primary);
+    margin-right: 6px;
+}
+.gd-btn:hover { color: var(--color-primary); }

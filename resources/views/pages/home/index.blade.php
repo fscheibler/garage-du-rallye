@@ -8,12 +8,12 @@
 
 @include('pages.home.sections.services-cards')
 
-@include('pages.home.sections.blog', ['blogs' => $blogs])
+@include('pages.home.sections.vehicles-cta')
+
+@include('sections.cta')
 
 @include('pages.home.sections.brands')
 
-@include('pages.home.sections.vehicles-cta')
+@include('pages.home.sections.blog', ['blogs' => $blogs])
 
-@include('pages.home.sections.contact-cta')
-
-@endsection 
+@endsection

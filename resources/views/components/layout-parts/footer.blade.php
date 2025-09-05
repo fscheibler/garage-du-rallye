@@ -14,7 +14,7 @@
                 <li><a href="{{ route('home') }}" class="hover:underline">Accueil</a></li>
                 <li><a href="{{ route('sales') }}" class="hover:underline">Vente</a></li>
                 <li><a href="{{ route('services') }}" class="hover:underline">Services</a></li>
-                <li><a href="{{ route('blog') }}" class="hover:underline">Blog</a></li>
+                <li><a href="{{ route('blog') }}" class="hover:underline">Actualités</a></li>
                 <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
             </ul>
         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog - Actualités & Conseils')
+@section('title', 'Actualités - Conseils & Informations')
 
 @section('content')
 <div class="bg-[var(--color-secondary)] text-white py-24">
@@ -10,7 +10,7 @@
         </span>
         
         <h1 class="text-5xl lg:text-6xl font-black uppercase leading-tight mb-6">
-            Notre Blog
+            Nos Actualités
         </h1>
         
         <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
@@ -28,7 +28,7 @@
                 {{-- Image --}}
                 <div class="relative h-48 bg-gray-200 overflow-hidden">
                     @if($blog->featured_image)
-                        <img src="{{ Storage::url($blog->featured_image) }}" 
+                        <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http://', 'https://', '/']) ? $blog->featured_image : (\Illuminate\Support\Str::startsWith($blog->featured_image, 'public/') ? asset(str_replace('public/', '/', $blog->featured_image)) : Storage::url($blog->featured_image)) }}" 
                              alt="{{ $blog->title }}"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     @else
@@ -99,6 +99,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    line-clamp: 3;
     overflow: hidden;
 }
 </style>

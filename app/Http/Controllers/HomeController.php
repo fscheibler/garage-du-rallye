@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $blogs = Blog::published()
             ->orderBy('published_at', 'desc')
-            ->limit(3)
+            ->limit(12)
             ->get();
 
         return view('pages.home.index', compact('blogs'));

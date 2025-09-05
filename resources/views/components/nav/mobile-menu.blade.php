@@ -90,9 +90,10 @@
             <ul class="space-y-6">
                 @foreach([
                     'home' => 'Accueil',
-                    'services' => 'Le garage',
+                    'garage' => 'Le garage',
+                    'services' => 'Services',
                     'sales' => 'Vente',
-                    'blog' => 'Blog',
+                    'blog' => 'Actualités',
                     'contact' => 'Contact'
                 ] as $route => $label)
                     <li>

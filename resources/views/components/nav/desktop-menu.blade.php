@@ -21,7 +21,7 @@
     x-init="init"
     x-ref="nav"
     @mouseleave="hide"
-    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    class="sticky top-0 z-50 w-full flex justify-center"
 >
     <div
         x-ref="marker"
@@ -32,9 +32,10 @@
     <ul class="flex text-bases font-semibold tracking-wide uppercase">
         @foreach([
             'home' => 'Accueil',
-            'services' => 'Le garage',
+            'garage' => 'Le garage',
+            'services' => 'Services',
             'sales' => 'Vente',
-            'blog' => 'Blog',
+            'blog' => 'Actualités',
             'contact' => 'Contact'
         ] as $route => $label)
             <li>

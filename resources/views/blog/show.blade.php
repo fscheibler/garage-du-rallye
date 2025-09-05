@@ -31,7 +31,7 @@
     {{-- Image à la une --}}
     @if($blog->featured_image)
     <div class="relative h-96 lg:h-[500px] overflow-hidden">
-        <img src="{{ Storage::url($blog->featured_image) }}" 
+        <img src="{{ \Illuminate\Support\Str::startsWith($blog->featured_image, ['http://', 'https://', '/']) ? $blog->featured_image : (\Illuminate\Support\Str::startsWith($blog->featured_image, 'public/') ? asset(str_replace('public/', '/', $blog->featured_image)) : Storage::url($blog->featured_image)) }}" 
              alt="{{ $blog->title }}"
              class="w-full h-full object-cover">
     </div>
@@ -57,7 +57,7 @@
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                    Retour au blog
+                    Retour aux actualités
                 </a>
 
                 <div class="flex gap-4">

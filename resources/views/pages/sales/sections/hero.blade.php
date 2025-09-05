@@ -1,12 +1,6 @@
-<section class="relative bg-[var(--color-secondary)] text-white py-24 font-[var(--font-sans)] overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center">
-            <h1 class="text-5xl lg:text-6xl font-black uppercase leading-tight mb-6">
-                Nos véhicules à vendre
-            </h1>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                Découvrez notre sélection de véhicules d'occasion contrôlés et révisés
-            </p>
-        </div>
-    </div>
-</section> 
+<x-banners.internal-page-banner 
+    title="Vente" 
+    subtitle="Découvrez notre sélection de véhicules d'occasion contrôlés, révisés et garantis."
+    background-image="images/sales/sales-banner.jpg"
+    height="h-[50vh]"
+/> 

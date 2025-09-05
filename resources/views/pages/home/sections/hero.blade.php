@@ -1,107 +1,48 @@
-<section x-data="carousel()" class="relative w-full h-[50vh] overflow-hidden">
-
-    {{-- Slides container --}}
-    <div class="w-full h-full flex transition-transform duration-700 ease-in-out"
-         :style="`transform: translateX(-${active * 100}%);`">
-
-        <template x-for="(slide, index) in slides" :key="index">
-            <div class="w-full flex-shrink-0 bg-cover bg-center relative flex items-center"
-                 :style="`background-image: url('${slide.image}'); height: 50vh;`">
-
-                <div class="container mx-auto px-6">
-                    <div class="max-w-2xl ml-auto text-right text-white">
-                        <h2 class="text-4xl text-black uppercase font-bold mb-4" x-text="slide.title"></h2>
-                        <p class="mb-6 text-lg" x-text="slide.text"></p>
-                        <x-base.button href="/services" variant="primary">
-                            View more
-                        </x-base.button>
-                    </div>
-                </div>
-            </div>
-        </template>
+{{-- SECTION HERO BANNER --}}
+<section class="relative w-full h-[75vh] overflow-hidden">
+    
+    {{-- Image de fond avec overlay --}}
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+         style="background-image: url('/images/home/slide2.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
     </div>
-
-    {{-- Arrows + pagination dans le container --}}
-    <div class="absolute bottom-6 inset-x-0">
-        <div class="container mx-auto px-6 flex items-center justify-between text-white">
-
-            {{-- Arrows --}}
-            <div class="flex gap-2 text-white">
-                <button
-                    @click="prev"
-                    class="w-[40px] text-3xl font-light transition-all tracking-[.15em] duration-300 hover:tracking-normal hover:text-4xl text-right"
-                >
-                    &larr;
-                </button>
-                <button
-                    @click="next"
-                    class="w-[40px] text-3xl font-light transition-all tracking-[.15em] duration-300 hover:tracking-normal hover:text-4xl text-right"
-                >
-                    &rarr;
-                </button>
-            </div>
-
-            {{-- Pagination --}}
-            <div class="flex gap-4 font-mono text-sm">
-                <template x-for="(slide, index) in slides" :key="index">
-                    <button
-                        @click="goTo(index)"
-                        :class="{ 'text-3xl text-black': active === index, 'text-2xl text-black': active !== index }"
-                    >
-                        <span x-text="`0${index + 1}`"></span>
-                    </button>
-                </template>
+    
+    {{-- Contenu principal --}}
+    <div class="relative z-10 h-full flex items-center">
+        <div class="w-full max-w-7xl mx-auto px-6">
+            
+            {{-- Contenu centré --}}
+            <div class="text-center text-white">
+                {{-- Sur-titre discret inspiré ShiftUp --}}
+                <div class="flex justify-center mb-6">
+                    <span class="inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-white/80">
+                        <span class="inline-block w-10 h-[2px] bg-[var(--color-primary)]"></span>
+                        Entretien & Services Auto
+                    </span>
+                </div>
+                
+                {{-- Titre principal --}}
+                <h1 class="text-6xl lg:text-8xl font-black uppercase mb-8 leading-tight">
+                    <span class="block text-white">Garage du</span>
+                    <span class="block text-[var(--color-primary)]">Rallye</span>
+                </h1>
+                
+                {{-- Sous-titre --}}
+                <p class="text-xl lg:text-3xl font-light leading-relaxed text-gray-200 max-w-4xl mx-auto">
+                    Votre partenaire automobile de confiance depuis plus de 25 ans
+                </p>
+                
             </div>
         </div>
     </div>
+    
+    {{-- Indicateur de défilement discret --}}
+    <a href="#next-section" class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+        <span class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </span>
+    </a>
 </section>
 
-<script>
-    function carousel() {
-        return {
-            active: 0,
-            interval: null,
-            slides: [
-                {
-                    image: '/images/home/slide1.jpg',
-                    title: 'Top New Features Coming to Shop',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing eli.',
-                    link: '#'
-                },
-                {
-                    image: '/images/home/slide2.jpg',
-                    title: 'Promo spéciale sur les diagnostics',
-                    text: 'Jusqu\'à -30% ce mois-ci.',
-                    link: '#'
-                },
-                {
-                    image: '/images/home/slide3.jpg',
-                    title: 'Prenez rendez-vous en ligne',
-                    text: 'Entretien, pneus, contrôle – rapide & efficace.',
-                    link: '#'
-                },
-                {
-                    image: '/images/home/slide4.jpg',
-                    title: 'Nouvelle gamme de services',
-                    text: 'Toujours plus proche de vos besoins.',
-                    link: '#'
-                }
-            ],
-            goTo(i) {
-                this.active = i;
-            },
-            prev() {
-                this.active = (this.active - 1 + this.slides.length) % this.slides.length;
-            },
-            next() {
-                this.active = (this.active + 1) % this.slides.length;
-            },
-            startAutoplay() {
-                this.interval = setInterval(() => this.next(), 5000);
-            },
-            init() {
-                this.startAutoplay();
-            }
-        }
-    }
-</script>

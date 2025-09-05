@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Services')
+@section('title', 'Nos Services')
 
 @section('content')
 
-@include('pages.services.sections.hero')
+@include('pages.services.sections.services-banner')
 
-@include('pages.services.sections.services-list')
+@include('pages.services.sections.services-grid')
 
-@include('pages.services.sections.cta')
+@include('pages.services.sections.process-steps')
 
-@endsection 
+@include('sections.cta')
+
+@endsection

@@ -13,10 +13,10 @@
             
             <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                 <x-base.button href="tel:+41221234567" variant="primary">
-                    📞 022 123 45 67
+                    Appelez-nous
                 </x-base.button>
-                <x-base.button href="{{ route('contact') }}" variant="outline">
-                    ✉️ Écrivez-nous
+                <x-base.button href="{{ route('contact') }}" variant="secondary">
+                    Écrivez-nous
                 </x-base.button>
             </div>
         </div>
