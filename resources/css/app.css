@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Oxanium', sans-serif;
+    --color-primary: #ff4d24;
+    --color-secondary: #1f2124;
+    --color-tertiary: #69727d;
+}
+
+/* Styles pour le menu de navigation */
+.is-active {
+    color: #ff4d24;
+}
+
+.is-active::before {
+    background-color: #ff4d24;
+}
