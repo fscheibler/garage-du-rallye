@@ -2,14 +2,8 @@
     <div class="max-w-7xl mx-auto px-6">
         
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <iframe
-                src="https://www.autoscout24.ch/fr/hci/list?design=4842&filter=10098"
-                width="100%"
-                height="1400"
-                frameborder="0"
-                scrolling="auto"
-                style="border: none;">
-            </iframe>
+            <div class="hci-container" data-config-id="4407" data-language="fr" data-entry-point="search"></div>
+            <script src="https://www.autoscout24.ch/assets/hci/v2/hci.current.js"></script>
         </div>
         
         <div class="mt-16 text-center">
